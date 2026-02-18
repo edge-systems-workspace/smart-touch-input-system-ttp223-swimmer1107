@@ -42,3 +42,15 @@ void setup() {
  *  - LED turns OFF
  *  - Prints "not detected"
  */
+
+void loop() {
+  int state = digitalRead(touchPin);
+
+  if (state == LOW) {
+    digitalWrite(ledPin, HIGH);
+    Serial.println("object detected");
+  } else {
+    digitalWrite(ledPin, LOW);
+    Serial.println("not detected");
+  }
+}
